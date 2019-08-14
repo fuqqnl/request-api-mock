@@ -1,8 +1,9 @@
 {
   "name": "request-api-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sample api mock middleware for node",
   "main": "index.js",
+  "repository": "https://github.com/fuqqnl/request-api-mock",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
