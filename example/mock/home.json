@@ -1,0 +1,16 @@
+{
+    "status": 0,
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "name": "zhangsan",
+                "age": 24
+            },
+            {
+                "name": "lisi",
+                "age": 30
+            }
+        ]
+    }
+}
