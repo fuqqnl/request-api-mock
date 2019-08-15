@@ -4,7 +4,7 @@
  * @param {string} relativePath mock目录地址
  * 用法：
  *  请求api的路径与mock目录的路径要相同。比如请求的api是: api/work/getList,那么与之对应的目录是mock/api/work/getList.json
- *  
+ *
  */
  var path = require('path');
 
@@ -13,7 +13,7 @@
         const moduleName = req.path.replace(/(\/|\\)$/i, '');
         const mockPath = path.resolve(__dirname, relativePath);
         try {
-            const proxy = path.join(mockPath, moduleName);
+            const proxy = require.resolve(mockPath + moduleName);
             try {
                 const api = require(proxy);
                 delete require.cache[proxy];
@@ -31,12 +31,14 @@
                     response(api);
                 }
             } catch(e) {
-                console.error(`get mock path error: ${proxy}, please check this path!`);
+                console.warn(`get mock path error: ${proxy}, please check this path!`);
+                next();
             }
         } catch(err) {
+            console.warn('request path error, please check it');
             next();
         }
-        
+
         function response(data) {
             if (data.fallback) {
                 return next();
@@ -50,5 +52,5 @@
     }
  };
 
- 
+
  

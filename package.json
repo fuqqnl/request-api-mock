@@ -1,6 +1,6 @@
 {
   "name": "request-api-mock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "sample api mock middleware for node",
   "main": "index.js",
   "repository": "https://github.com/fuqqnl/request-api-mock",
